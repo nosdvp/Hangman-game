@@ -2,10 +2,66 @@ import { useState } from 'react';
 import './App.css';
 import cross from './img/cross.svg'
 import play from './img/play.svg'
+import back from './img/back.svg'
 
 function App() {
 
   const [step, setStep] = useState('menu')
+  const [topic, setTopic] = useState('')
+  const [currentWord, setCurrentWord] = useState('')
+
+  const categoryList = ['MOVIES', 'TV SHOW', 'COUNTRIES', 'CAPITAL CITIES', 'ANIMALS', 'SPORTS']
+
+  const categories = {
+    'MOVIES': [
+      'TITANIC',
+      'AVATAR',
+      'INCEPTION',
+      'GLADIATOR',
+      'JAWS',
+      'JAWS',
+    ],
+
+    'TV SHOW': [
+      'BREAKING BAD',
+      'FRIENDS',
+      'STRANGER THINGS',
+      'THE OFFICE',
+      'SHERLOCK'
+    ],
+
+    'COUNTRIES': [
+      'UKRAINE',
+      'AUSTRALIA',
+      'ARGENTINA',
+      'PORTUGAL',
+      'JAPAN'
+    ],
+
+    'CAPITAL CITIES': [
+      'LONDON',
+      'TOKYO',
+      'PARIS',
+      'CANBERRA',
+      'BUDAPEST'
+    ],
+
+    'ANIMALS': [
+      'ELEPHANT',
+      'KANGAROO',
+      'CROCODILE',
+      'PENGUIN',
+      'GIRAFFE'
+    ],
+
+    'SPORTS': [
+      'FOOTBALL',
+      'BASKETBALL',
+      'VOLLEYBALL',
+      'SWIMMING',
+      'BOXING'
+    ]
+  };
 
   return (
     <div className='wrapper'>
@@ -61,6 +117,30 @@ function App() {
               <img src={cross}/>
             </button>
           </div>
+        </div>
+      ) : step === 'choise topic' ? (
+        <div className='listTopicWrapper'>
+          <h1>Pick a CategoryList</h1>
+
+          {categoryList.map((item, index) => (
+            <button 
+              onClick={() => {
+                setStep('game')
+                setTopic(item)
+
+                const choiceWord = Math.floor(Math.random() * categories[item].length)
+                setCurrentWord(categories[item][choiceWord])
+              }}
+              className={index % 2 === 0 ? 'listTopicWrapper__firstItem' : 'listTopicWrapper__secondItem'}
+            >{item}</button>
+          ))}
+
+          <button 
+            className='listTopicWrapper__back'
+            onClick={() => setStep('menu')}
+            >
+            <img src={back}/>
+          </button>
         </div>
       ) : null}
     </div>
