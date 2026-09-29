@@ -1,14 +1,33 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import cross from './img/cross.svg'
 import play from './img/play.svg'
 import back from './img/back.svg'
+import menu from './img/menu.svg'
+import heart from './img/heart.svg'
 
 function App() {
 
   const [step, setStep] = useState('menu')
   const [topic, setTopic] = useState('')
   const [currentWord, setCurrentWord] = useState('')
+
+  const [life, setLife] = useState(4)
+  const [lifeClass, setLifeClass] = useState('')
+
+  useEffect(() => {
+    if(life === 5){
+      setLifeClass('gameFieldWrapper__navBar_health_healthBar_fiveLife')
+    }else if(life === 4){
+      setLifeClass('gameFieldWrapper__navBar_health_healthBar_fourLife')
+    }else if(life === 3){
+      setLifeClass('gameFieldWrapper__navBar_health_healthBar_threeLife')
+    }else if(life === 2){
+      setLifeClass('gameFieldWrapper__navBar_health_healthBar_twoLife')
+    }else if(life === 1){
+      setLifeClass('gameFieldWrapper__navBar_health_healthBar_oneLife')
+    }
+  }, [life])
 
   const categoryList = ['MOVIES', 'TV SHOW', 'COUNTRIES', 'CAPITAL CITIES', 'ANIMALS', 'SPORTS']
 
@@ -120,7 +139,7 @@ function App() {
         </div>
       ) : step === 'choise topic' ? (
         <div className='listTopicWrapper'>
-          <h1>Pick a CategoryList</h1>
+          <h1>Pick a Category</h1>
 
           {categoryList.map((item, index) => (
             <button 
@@ -141,6 +160,24 @@ function App() {
             >
             <img src={back}/>
           </button>
+        </div>
+      ) : step === 'game' ? (
+        <div className='gameFieldWrapper'>
+          <div className='gameFieldWrapper__navBar'>
+            <div className='gameFieldWrapper__navBar_nav'>
+              <button>
+                <img src={menu}></img>
+              </button>
+              <p>{topic}</p>
+            </div>
+
+            <div className='gameFieldWrapper__navBar_health'>
+              <div className='gameFieldWrapper__navBar_health_healthBar'>
+                <div className={lifeClass}></div>
+              </div>
+              <img src={heart}/>
+            </div>
+          </div>
         </div>
       ) : null}
     </div>

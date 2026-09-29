@@ -256,6 +256,122 @@
   height: 60px;
 }
 
+.gameFieldWrapper {
+  width: 95%;
+  height: auto;
+  border: 3px solid #c98bff;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.gameFieldWrapper__navBar {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.gameFieldWrapper__navBar_nav {
+  width: 250px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.gameFieldWrapper__navBar_nav button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  background-color: #a175d7;
+  box-shadow: inset 0px 1px 3px white, 0px 5px 10px rgba(0, 0, 0, 0.371);
+  cursor: pointer;
+}
+.gameFieldWrapper__navBar_nav button:hover {
+  transform: scale(1.02);
+  transition: all 0.01s;
+}
+.gameFieldWrapper__navBar_nav button:active {
+  transform: scale(0.98);
+  transition: all 0.01s;
+}
+.gameFieldWrapper__navBar_nav button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gameFieldWrapper__navBar_nav button img {
+  width: 40px;
+  height: 40px;
+}
+.gameFieldWrapper__navBar_nav p {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+}
+.gameFieldWrapper__navBar_health {
+  width: 280px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.gameFieldWrapper__navBar_health_healthBar {
+  width: 200px;
+  height: 40px;
+  background-color: #b191e4;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.gameFieldWrapper__navBar_health_healthBar_fiveLife {
+  width: 100%;
+  height: 40px;
+  background-color: #d6a1d7;
+  border-radius: 20px;
+  box-shadow: inset 0px 1px 5px white, 0px 1px 5px black;
+}
+.gameFieldWrapper__navBar_health_healthBar_fourLife {
+  width: 80%;
+  height: 40px;
+  background-color: #d6a1d7;
+  border-radius: 20px;
+  box-shadow: inset 0px 1px 5px white, 0px 1px 5px black;
+}
+.gameFieldWrapper__navBar_health_healthBar_threeLife {
+  width: 60%;
+  height: 40px;
+  background-color: #d6a1d7;
+  border-radius: 20px;
+  box-shadow: inset 0px 1px 5px white, 0px 1px 5px black;
+}
+.gameFieldWrapper__navBar_health_healthBar_twoLife {
+  width: 40%;
+  height: 40px;
+  background-color: #d6a1d7;
+  border-radius: 20px;
+  box-shadow: inset 0px 1px 5px white, 0px 1px 5px black;
+}
+.gameFieldWrapper__navBar_health_healthBar_oneLife {
+  width: 20%;
+  height: 40px;
+  background-color: #d6a1d7;
+  border-radius: 20px;
+  box-shadow: inset 0px 1px 5px white, 0px 1px 5px black;
+}
+.gameFieldWrapper__navBar_health img {
+  width: 50px;
+  height: 50px;
+  width: 50px;
+  filter: drop-shadow(0 -1px 2px white);
+}
+
 @media (max-width: 768px) {
   .rulesWrapper,
   .listTopicWrapper {
