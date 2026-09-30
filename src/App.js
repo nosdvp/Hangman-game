@@ -14,6 +14,7 @@ function App() {
 
   const [life, setLife] = useState(4)
   const [lifeClass, setLifeClass] = useState('')
+  const [menuBlock, setMenuBlock] = useState(false)
 
   useEffect(() => {
     if(life === 5){
@@ -30,6 +31,10 @@ function App() {
   }, [life])
 
   const categoryList = ['MOVIES', 'TV SHOW', 'COUNTRIES', 'CAPITAL CITIES', 'ANIMALS', 'SPORTS']
+
+  const firstLineLetters = 'QWERTYUIOP'
+  const secondLineLetters = 'ASDFGHJKL'
+  const thirdLineLetters = ' ZXCVBNM '
 
   const categories = {
     'MOVIES': [
@@ -165,7 +170,9 @@ function App() {
         <div className='gameFieldWrapper'>
           <div className='gameFieldWrapper__navBar'>
             <div className='gameFieldWrapper__navBar_nav'>
-              <button>
+              <button
+                onClick={() => setMenuBlock(true)}
+              >
                 <img src={menu}></img>
               </button>
               <p>{topic}</p>
@@ -178,6 +185,48 @@ function App() {
               <img src={heart}/>
             </div>
           </div>
+          <div className='gameFieldWrapper__firstStringLetter'>
+            <div className='gameFieldWrapper__firstStringLetter_first'>
+              {firstLineLetters.split('').map((item, index) => (
+                <button>{item}</button>
+              ))}
+            </div>
+
+            <div className='gameFieldWrapper__firstStringLetter_second'>
+              {secondLineLetters.split('').map((item, index) => (
+                <button>{item}</button>
+              ))}
+            </div>
+
+            <div className='gameFieldWrapper__firstStringLetter_third'>
+              {thirdLineLetters.split('').map((item, index) => (
+                <button>{item}</button>
+              ))}
+            </div>
+          </div>
+          {menuBlock === true ? (
+              <div className='gameFieldWrapper__menu'>
+                <h1>Menu</h1>
+                <button 
+                  className='gameFieldWrapper__menu_even' 
+                  onClick={() => {
+                    setStep('menu')
+                    setMenuBlock(false)
+                  }}
+                >GO TO HOME</button>
+                <button 
+                  className='gameFieldWrapper__menu_odd'
+                  onClick={() => {
+                    setStep('choise topic')
+                    setMenuBlock(false)
+                  }}
+                >CHANGE CATEGORY</button>
+                <button 
+                  className='gameFieldWrapper__menu_even'
+                  onClick={() => setMenuBlock(false)}
+                >CLOSE</button>
+              </div>
+            ) : null}
         </div>
       ) : null}
     </div>

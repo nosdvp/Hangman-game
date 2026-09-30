@@ -371,6 +371,110 @@
   width: 50px;
   filter: drop-shadow(0 -1px 2px white);
 }
+.gameFieldWrapper__firstStringLetter {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.gameFieldWrapper__firstStringLetter_first {
+  width: 80%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.gameFieldWrapper__firstStringLetter_first button {
+  width: 60px;
+  height: 50px;
+  color: white;
+  cursor: pointer;
+}
+.gameFieldWrapper__firstStringLetter_first button:hover {
+  transform: scale(1.02);
+  transition: all 0.01s;
+}
+.gameFieldWrapper__firstStringLetter_first button:active {
+  transform: scale(0.98);
+  transition: all 0.01s;
+}
+.gameFieldWrapper__firstStringLetter_first button {
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: #88b1ef;
+  font-size: 20px;
+  font-weight: bold;
+}
+.gameFieldWrapper__firstStringLetter_second {
+  width: 70%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.gameFieldWrapper__firstStringLetter_second button {
+  width: 60px;
+  height: 50px;
+}
+.gameFieldWrapper__firstStringLetter_third {
+  width: 80%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.gameFieldWrapper__firstStringLetter_third button {
+  width: 60px;
+  height: 50px;
+}
+.gameFieldWrapper__menu {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  background-color: #a174d9;
+  border-radius: 20px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gameFieldWrapper__menu h1 {
+  font-size: 40px;
+  color: white;
+  margin-bottom: 40px;
+}
+.gameFieldWrapper__menu_even, .gameFieldWrapper__menu_odd {
+  border: none;
+  outline: none;
+  margin-bottom: 40px;
+  cursor: pointer;
+  width: 90%;
+}
+.gameFieldWrapper__menu_even:hover, .gameFieldWrapper__menu_odd:hover {
+  transform: scale(1.02);
+  transition: all 0.01s;
+}
+.gameFieldWrapper__menu_even:active, .gameFieldWrapper__menu_odd:active {
+  transform: scale(0.98);
+  transition: all 0.01s;
+}
+.gameFieldWrapper__menu_even, .gameFieldWrapper__menu_odd {
+  border-radius: 10px;
+  height: 50px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #ec99cf;
+  box-shadow: inset 0px 1px 5px white, 0px 5px 10px rgba(0, 0, 0, 0.267);
+}
+.gameFieldWrapper__menu_odd {
+  background-color: #a378e4;
+}
 
 @media (max-width: 768px) {
   .rulesWrapper,
